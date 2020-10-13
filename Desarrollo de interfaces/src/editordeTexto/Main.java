@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextPane;
 
 public class Main {
@@ -60,9 +61,16 @@ public class Main {
 			Font f=new Font(fuente, Font.PLAIN, 15);
 			textoUsuario.setFont(f);
 		}
-		public static void cambiarTamaño() {
+		public static void cambiarTamaño(JSpinner tamañoLetra, JTextPane textoUsuario ) {
+			try {
+			       tamañoLetra.commitEdit();
+			} catch ( java.text.ParseException e ) {  
+				
+			}
+			int valorSpinner = (Integer) tamañoLetra.getValue();
 			
 		}
+		
 		
 	}
 

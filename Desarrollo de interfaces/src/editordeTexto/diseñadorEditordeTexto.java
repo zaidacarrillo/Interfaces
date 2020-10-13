@@ -232,7 +232,7 @@ public class diseñadorEditordeTexto extends Main {
 		JSpinner tamañoLetra = new JSpinner();
 		tamañoLetra.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				
+				cambiarTamaño(tamañoLetra, textoUsuario);
 			}
 		});
 		tamañoLetra.setModel(new SpinnerNumberModel(0, null, 100, 1));
