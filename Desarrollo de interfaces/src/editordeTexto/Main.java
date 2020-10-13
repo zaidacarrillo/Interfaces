@@ -60,6 +60,9 @@ public class Main {
 			Font f=new Font(fuente, Font.PLAIN, 15);
 			textoUsuario.setFont(f);
 		}
+		public static void cambiarTamaño() {
+			
+		}
 		
 	}
 

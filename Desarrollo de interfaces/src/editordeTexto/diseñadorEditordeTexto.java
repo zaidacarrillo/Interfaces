@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import javax.swing.text.DefaultEditorKit;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
@@ -20,6 +22,11 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.JTextField;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class diseñadorEditordeTexto extends Main {
 
@@ -201,27 +208,36 @@ public class diseñadorEditordeTexto extends Main {
 		Nuevo.setBounds(0, 26, 59, 54);
 		frame.getContentPane().add(Nuevo);
 		
-		JButton Cortar = new JButton("");
+		JButton Cortar = new JButton(new DefaultEditorKit.CutAction());
+		Cortar.setText("cortar");
 		Cortar.setToolTipText("Tijeras");
 		Cortar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoCortar.png"));
-		Cortar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		
+			
 		Cortar.setBounds(106, 26, 59, 54);
 		frame.getContentPane().add(Cortar);
 		
-		JButton Copiar = new JButton("");
+		JButton Copiar = new JButton(new DefaultEditorKit.CopyAction());
 		Copiar.setToolTipText("Copiar");
 		Copiar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoCopiar.png"));
 		Copiar.setBounds(158, 26, 65, 54);
 		frame.getContentPane().add(Copiar);
 		
-		JButton Pegar = new JButton("");
+		JButton Pegar = new JButton(new DefaultEditorKit.PasteAction());
 		Pegar.setToolTipText("Pegar");
 		Pegar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoPegar.png"));
 		Pegar.setBounds(216, 26, 65, 54);
 		frame.getContentPane().add(Pegar);
+		
+		JSpinner tamañoLetra = new JSpinner();
+		tamañoLetra.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				
+			}
+		});
+		tamañoLetra.setModel(new SpinnerNumberModel(0, null, 100, 1));
+		tamañoLetra.setBounds(312, 60, 30, 20);
+		frame.getContentPane().add(tamañoLetra);
 		
 		
 	}
