@@ -62,12 +62,15 @@ public class Main {
 			textoUsuario.setFont(f);
 		}
 		public static void cambiarTamaño(JSpinner tamañoLetra, JTextPane textoUsuario ) {
-			try {
-			       tamañoLetra.commitEdit();
-			} catch ( java.text.ParseException e ) {  
-				
-			}
+			
 			int valorSpinner = (Integer) tamañoLetra.getValue();
+			
+			Font f2;
+			f2 = textoUsuario.getFont(); 
+			f2=f2.deriveFont(((float)valorSpinner));
+			
+			textoUsuario.setFont(f2);
+			
 			
 		}
 		
