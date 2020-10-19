@@ -26,6 +26,8 @@ import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ChangeEvent;
 
 public class diseñadorEditordeTexto extends Main {
@@ -33,6 +35,7 @@ public class diseñadorEditordeTexto extends Main {
 	private JFrame frame;
 	private JButton Nuevo;
 	public JTextPane textoUsuario;
+	boolean cambios;
 
 	/**
 	 * Launch the application.
@@ -67,7 +70,19 @@ public class diseñadorEditordeTexto extends Main {
 			public void windowClosing(WindowEvent e) {
 				int res= JOptionPane.showConfirmDialog(null, "Cerrar?");
 				if(res==JFileChooser.APPROVE_OPTION) {
-					frame.dispose();
+					//frame.dispose();
+							if(cambios == true) {
+								JOptionPane.showMessageDialog(null, "Existen cambios sin guardar deseas guardar");
+								try {
+									guardarDatos(textoUsuario);
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+							}else if(cambios == false) {
+								JOptionPane.showMessageDialog(null, "Hasta la próxima! todo está guardado.");
+							}
+					
 				}
 				
 			}
@@ -81,6 +96,28 @@ public class diseñadorEditordeTexto extends Main {
 		frame.getContentPane().add(menuBar);
 		
 		textoUsuario = new JTextPane();
+		
+		textoUsuario.getDocument().addDocumentListener(new DocumentListener() {
+
+			@Override
+			public void changedUpdate(DocumentEvent arg0) {
+				 cambios = true;
+				
+			}
+
+			@Override
+			public void insertUpdate(DocumentEvent arg0) {
+				 cambios = true;
+				
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent arg0) {
+				 cambios =  true;
+				
+			}
+			
+		});
 		textoUsuario.setBounds(63, 91, 742, 521);
 		frame.getContentPane().add(textoUsuario);
 		
@@ -125,6 +162,7 @@ public class diseñadorEditordeTexto extends Main {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					guardarDatos(textoUsuario);
+					cambios = false;
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -204,14 +242,14 @@ public class diseñadorEditordeTexto extends Main {
 			}
 		});
 		Nuevo.setToolTipText("Nuevo Archivo");
-		Nuevo.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\nuevoArchivoicono.png"));
+		Nuevo.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/nuevoArchivoicono.png")));
 		Nuevo.setBounds(0, 26, 59, 54);
 		frame.getContentPane().add(Nuevo);
 		
 		JButton Cortar = new JButton(new DefaultEditorKit.CutAction());
+		Cortar.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/iconoCortar.png")));
 		Cortar.setText("cortar");
 		Cortar.setToolTipText("Tijeras");
-		Cortar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoCortar.png"));
 		
 			
 		Cortar.setBounds(106, 26, 59, 54);
@@ -230,12 +268,14 @@ public class diseñadorEditordeTexto extends Main {
 		frame.getContentPane().add(Pegar);
 		
 		JSpinner tamañoLetra = new JSpinner();
+		
 		tamañoLetra.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				cambiarTamaño(tamañoLetra, textoUsuario);
 			}
 		});
 		tamañoLetra.setModel(new SpinnerNumberModel(0, null, 100, 1));
+		tamañoLetra.setValue(textoUsuario.getFont().getSize());
 		tamañoLetra.setBounds(312, 60, 30, 20);
 		frame.getContentPane().add(tamañoLetra);
 		
