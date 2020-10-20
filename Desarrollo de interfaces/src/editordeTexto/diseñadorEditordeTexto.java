@@ -29,6 +29,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.JLabel;
 
 public class diseñadorEditordeTexto extends Main {
 
@@ -87,12 +88,12 @@ public class diseñadorEditordeTexto extends Main {
 				
 			}
 		});
-		frame.setBounds(100, 100, 892, 673);
+		frame.setBounds(100, 100, 1004, 1017);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 876, 32);
+		menuBar.setBounds(0, 0, 988, 32);
 		frame.getContentPane().add(menuBar);
 		
 		textoUsuario = new JTextPane();
@@ -118,7 +119,7 @@ public class diseñadorEditordeTexto extends Main {
 			}
 			
 		});
-		textoUsuario.setBounds(63, 91, 742, 521);
+		textoUsuario.setBounds(63, 117, 855, 795);
 		frame.getContentPane().add(textoUsuario);
 		
 		JMenu MnFichero = new JMenu("Fichero");
@@ -127,11 +128,18 @@ public class diseñadorEditordeTexto extends Main {
 		JMenuItem Mn2Nuevo = new JMenuItem("Nuevo");
 		Mn2Nuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				
 			}
 		});
 		MnFichero.add(Mn2Nuevo);
 		
 		JMenuItem Mn2Abrir = new JMenuItem("Abrir");
+		Mn2Abrir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirArchivo(textoUsuario);
+			}
+		});
 		MnFichero.add(Mn2Abrir);
 		
 		JMenuItem Mn2Guardar = new JMenuItem("Guardar");
@@ -206,17 +214,23 @@ public class diseñadorEditordeTexto extends Main {
 		});
 		Mn2Fuente.add(fuenteCalibri);
 		
-		JMenuItem Mn2Cortar = new JMenuItem("Cortar");
+		JMenuItem Mn2Cortar = new JMenuItem(new DefaultEditorKit.CutAction());
+		Mn2Cortar.setText("Cortar");
 		Mn2Cortar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		MmEditor.add(Mn2Cortar);
-		
-		JMenuItem Mn2Copiar = new JMenuItem("Copiar");
+		JMenuItem Mn2Copiar = new JMenuItem(new DefaultEditorKit.CopyAction());
+		Mn2Copiar.setText("Copiar");
+		Mn2Copiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		MmEditor.add(Mn2Copiar);
 		
-		JMenuItem Mn2Pegar = new JMenuItem("Pegar");
+		JMenuItem Mn2Pegar = new JMenuItem(new DefaultEditorKit.PasteAction());
+		Mn2Pegar.setText("Pegar");
 		MmEditor.add(Mn2Pegar);
 		
 		JButton Guardar = new JButton("");
@@ -231,14 +245,14 @@ public class diseñadorEditordeTexto extends Main {
 				}
 			}
 		});
-		Guardar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoGuardar.png"));
+		Guardar.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/iconoGuardar.png")));
 		Guardar.setBounds(53, 26, 59, 54);
 		frame.getContentPane().add(Guardar);
 		
 		Nuevo = new JButton("");
 		Nuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				nuevoArchivo(textoUsuario);
+				nuevoArchivo(textoUsuario, cambios);
 			}
 		});
 		Nuevo.setToolTipText("Nuevo Archivo");
@@ -248,7 +262,7 @@ public class diseñadorEditordeTexto extends Main {
 		
 		JButton Cortar = new JButton(new DefaultEditorKit.CutAction());
 		Cortar.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/iconoCortar.png")));
-		Cortar.setText("cortar");
+		Cortar.setText("");
 		Cortar.setToolTipText("Tijeras");
 		
 			
@@ -256,14 +270,16 @@ public class diseñadorEditordeTexto extends Main {
 		frame.getContentPane().add(Cortar);
 		
 		JButton Copiar = new JButton(new DefaultEditorKit.CopyAction());
+		Copiar.setText("");
 		Copiar.setToolTipText("Copiar");
-		Copiar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoCopiar.png"));
+		Copiar.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/iconoCopiar.png")));
 		Copiar.setBounds(158, 26, 65, 54);
 		frame.getContentPane().add(Copiar);
 		
 		JButton Pegar = new JButton(new DefaultEditorKit.PasteAction());
+		Pegar.setText("");
 		Pegar.setToolTipText("Pegar");
-		Pegar.setIcon(new ImageIcon("E:\\Interfaces\\utilidadesVarias\\iconoPegar.png"));
+		Pegar.setIcon(new ImageIcon(diseñadorEditordeTexto.class.getResource("/imagenes/iconoPegar.png")));
 		Pegar.setBounds(216, 26, 65, 54);
 		frame.getContentPane().add(Pegar);
 		
@@ -276,8 +292,12 @@ public class diseñadorEditordeTexto extends Main {
 		});
 		tamañoLetra.setModel(new SpinnerNumberModel(0, null, 100, 1));
 		tamañoLetra.setValue(textoUsuario.getFont().getSize());
-		tamañoLetra.setBounds(312, 60, 30, 20);
+		tamañoLetra.setBounds(451, 60, 37, 20);
 		frame.getContentPane().add(tamañoLetra);
+		
+		JLabel lblNewLabel = new JLabel("Cambiar tama\u00F1o letra");
+		lblNewLabel.setBounds(320, 63, 115, 14);
+		frame.getContentPane().add(lblNewLabel);
 		
 		
 	}
