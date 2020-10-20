@@ -31,7 +31,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JLabel;
 
-public class diseñadorEditordeTexto extends Main {
+public class diseñadorEditordeTexto extends Utilidades {
 
 	private JFrame frame;
 	private JButton Nuevo;

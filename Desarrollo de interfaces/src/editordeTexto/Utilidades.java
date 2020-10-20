@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextPane;
 
-public class Main {
+public class Utilidades {
 	String rutaUsuario;
 
 		public static void guardarDatos(JTextPane textoUsuario) throws IOException {
