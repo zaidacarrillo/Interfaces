@@ -61,7 +61,7 @@ public class diseñadorTablas extends Utilidades {
 		botonNuevaTabla.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				nuevosDatos nd1 = new nuevosDatos();
-				
+				nd1.setVisible(true);
 			}
 		});
 		botonNuevaTabla.setBorder(UIManager.getBorder("Button.border"));
