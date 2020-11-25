@@ -1,0 +1,117 @@
+﻿<Window x:Class="Mahhong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mahhong"
+        mc:Ignorable="d"
+        Title="Mahjong" Height="935.776" Width="706.637" ResizeMode="NoResize" Closing="Window_Closing" Background="White" Icon="mahjongicono.png">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+
+
+        </Grid.ColumnDefinitions>
+        <Menu   Grid.ColumnSpan="4" >
+            <MenuItem Header="Juego" Height="27" Width="72"  >
+                <MenuItem Header="Nuevo"/>
+                <MenuItem Header="Configurar"/>
+                <MenuItem Header="Salir" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Puntuaciones">
+                <MenuItem Header="Hall of Fame"/>
+                <MenuItem Header="Exportar"/>
+            </MenuItem>
+        </Menu>
+        <Button  Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="3" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="174" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="176" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.ColumnSpan="2"  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="177" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="174" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="176" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="3" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="174" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="176" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Grid.Column="3" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="175" Height="220">
+            <Button.Background>
+                <ImageBrush ImageSource="pngwing.com.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
