@@ -17,3 +17,5 @@ C:\Users\PC33\source\repos\Mahhong\Mahhong\obj\Debug\dialogoConfiguracion.g.cs
 C:\Users\PC33\source\repos\Mahhong\Mahhong\obj\Debug\Mahhong_Content.g.cs
 C:\Users\PC33\source\repos\Mahhong\Mahhong\bin\Debug\mahjongicono.png
 C:\Users\PC33\source\repos\Mahhong\Mahhong\obj\Debug\dialogoConfiguracion.baml
+C:\Users\PC33\source\repos\Mahhong\Mahhong\obj\Debug\HallofFame.g.cs
+C:\Users\PC33\source\repos\Mahhong\Mahhong\obj\Debug\HallofFame.baml

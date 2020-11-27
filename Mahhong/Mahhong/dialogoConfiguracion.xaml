@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mahhong"
         mc:Ignorable="d"
-        Title="Configuración" Height="193.617" Width="506.383" Icon="mahjongicono.png" Background="White">
+        Title="Configuración" Height="193.617" Width="506.383" Icon="mahjongicono.png" Background="White" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Height="162" VerticalAlignment="Top" Width="496">
         <Grid.RowDefinitions>
             <RowDefinition Height="79*"/>
@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="21,56,0,0" TextWrapping="Wrap" Text="Tiempo Transición imágenes" VerticalAlignment="Top" Width="169"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="223,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226"/>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Height="22" Margin="274,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="92"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="395,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="91" Height="22"/>
+        <Button Content="Aceptar" HorizontalAlignment="Left" Height="22" Margin="274,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="92" IsCancel="True"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="395,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="91" Height="22" IsCancel="True" IsDefault="True"/>
     </Grid>
 </Window>

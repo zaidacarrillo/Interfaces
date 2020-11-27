@@ -25,12 +25,12 @@
         <Menu   Grid.ColumnSpan="4" >
             <MenuItem Header="Juego" Height="27" Width="72"  >
                 <MenuItem Header="Nuevo"/>
-                <MenuItem Header="Configurar"/>
+                <MenuItem Header="Configurar" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Salir" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Puntuaciones">
-                <MenuItem Header="Hall of Fame"/>
-                <MenuItem Header="Exportar"/>
+                <MenuItem Header="Hall of Fame" Click="MenuItem_HallofFame"/>
+                <MenuItem Header="Exportar" Click="MenuItem_Exportar"/>
             </MenuItem>
         </Menu>
         <Button  Grid.Row="1">
