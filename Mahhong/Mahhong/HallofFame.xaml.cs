@@ -19,22 +19,33 @@ namespace Mahhong
     /// </summary>
     public partial class HallofFame : Window
     {
-        public List<Jugador> ListadoJugadores { get; set; }
+        //Sin view model
+        //public List<Jugador> ListadoJugadores { get; set; }
 
         public HallofFame()
         {
             InitializeComponent();
+            
+            /* ListadoJugadores = new List<Jugador>();
+               ListadoJugadores.Add(new Jugador(1, "Carlos", 3.88));
+               ListadoJugadores.Add(new Jugador(2, "Jerry", 5.01));
+               ListadoJugadores.Add(new Jugador(3, "Juan", 6.01));
+               ListadoJugadores.Add(new Jugador(4, "Carla", 8.09));
+               ListadoJugadores.Add(new Jugador(5, "María", 10.00));*/
+      
+          //  List<Jugador> ListadoJugadores = HallofFameViewModel.binding();
 
-            ListadoJugadores = new List<Jugador>();
-            ListadoJugadores.Add(new Jugador(1, "Carlos", 3.88));
-            ListadoJugadores.Add(new Jugador(2, "Jerry", 5.01));
-            ListadoJugadores.Add(new Jugador(3, "Juan", 6.01));
-            ListadoJugadores.Add(new Jugador(4, "Carla", 8.09));
-            ListadoJugadores.Add(new Jugador(5, "María", 10.00));
-
-            DataContext = this;
+            this.DataContext = new HallofFameViewModel();
 
             
         }
+
+        private void Resetearpuntuaciones(object sender, RoutedEventArgs e)
+        {
+            HallofFameViewModel.Resetearpuntuaciones();
+            dataGrid.Items.Refresh();
+
+        }
+
     }
 }

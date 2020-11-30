@@ -6,11 +6,20 @@
         xmlns:local="clr-namespace:Mahhong"
         mc:Ignorable="d"
         Title="HallofFame" Height="616.071" Width="690.179" Icon="mahjongicono.png" ResizeMode="NoResize">
-    <DataGrid ItemsSource="{Binding ListadoJugadores}" AutoGenerateColumns="False">
-    <DataGrid.Columns>
-        <DataGridTextColumn Header="posicion" Binding="{Binding posicion}"/>
-        <DataGridTextColumn Header="nombre" Binding="{Binding nombre}"/>
-        <DataGridTextColumn Header="tiempo" Binding="{Binding tiempo}"/>
-     </DataGrid.Columns>
-    </DataGrid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="522*"/>
+            <RowDefinition Height="65*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding ListadoJugadores}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="posicion" Binding="{Binding posicion}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="nombre" Binding="{Binding nombre}"/>
+                <DataGridTextColumn Header="tiempo" Binding="{Binding tiempo}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Resetear puntuaciones
+                " HorizontalAlignment="Left" Margin="375,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="125" Click="Resetearpuntuaciones" Height="20"/>
+        <Button Content="Cerrar" HorizontalAlignment="Left" Margin="552,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="20" IsCancel="True" IsDefault="True"/>
+    </Grid>
 </Window>
